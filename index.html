@@ -25,55 +25,47 @@
         <link href="css/tooplate-barista.css" rel="stylesheet">
         
         <style>
-/* --- Hero Section fix --- */
-.hero-section {
-  background-color: #000;
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-}
+/* CSS untuk carousel produk otomatis dengan panah */
+            #carouselProduk .carousel-inner {
+              padding: 10px 0;
+            }
 
-/* --- Produk section tampil full satu baris horizontal --- */
-.produk-section {
-  background: #3a1c00;
-  padding: 60px 0;
-  text-align: center;
-}
+            #carouselProduk .product-item {
+              flex: 0 0 45%;
+              background-color: rgba(255, 255, 255, 0.05);
+              border-radius: 15px;
+              overflow: hidden;
+              transition: transform 0.3s ease;
+              max-width: 600px; /* Batasi lebar maksimum */
+            }
 
-.produk-scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
-}
+            #carouselProduk .product-item:hover {
+              transform: scale(1.05);
+            }
 
-.produk-scroll::-webkit-scrollbar {
-  display: none; /* sembunyikan scrollbar */
-}
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+              background-color: rgba(255, 255, 255, 0.7);
+              border-radius: 50%;
+              padding: 15px;
+            }
 
-.produk-item {
-  flex: 0 0 270px;
-  background: linear-gradient(to bottom, #4a1c00, #d37a00);
-  border-radius: 16px;
-  color: white;
-  text-align: left;
-  padding: 15px;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.produk-item:hover {
-  transform: scale(1.05);
-}
-
-.produk-item img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-    }
+            /* Penyesuaian untuk tampilan mobile */
+            @media (max-width: 768px) {
+              #carouselProduk .product-item {
+                flex: 0 0 90%;
+                max-width: 300px;
+              }
+              
+              #carouselProduk .d-flex.justify-content-center {
+                flex-direction: column;
+                align-items: center;
+              }
+              
+              #carouselProduk .d-flex.justify-content-center .product-item {
+                margin-bottom: 20px;
+              }
+              
             </style>
     </head>
     
