@@ -528,6 +528,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
+.hero-section {
   background-color: var(--dark-color);
   position: relative;
   overflow: hidden;
@@ -546,6 +547,10 @@ strong {
   width: 250px;
   height: 350px;
   pointer-events: none;
+  
+  /* Mengubah bentuk menjadi polygon */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  border-radius: 0; /* Menghapus border-radius karena sudah menggunakan clip-path */
 }
 
 @media screen and (min-width: 991px) {
@@ -594,7 +599,7 @@ strong {
   width: 35%;
   height: 1px;
   margin: auto 15px 0 15px;
-}
+	}
 
 
 /*---------------------------------------
@@ -1197,6 +1202,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
