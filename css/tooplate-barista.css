@@ -548,7 +548,7 @@ strong {
   pointer-events: none;
   
   /* Mengubah bentuk menjadi polygon */
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   border-radius: 0; /* Menghapus border-radius karena sudah menggunakan clip-path */
 }
 @media screen and (min-width: 991px) {
@@ -1214,6 +1214,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
