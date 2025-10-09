@@ -25,32 +25,35 @@
         <link href="css/tooplate-barista.css" rel="stylesheet">
         
         <style>
-            /* CSS tambahan untuk layout produk horizontal */
-            .products-horizontal {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-            
-            .product-item {
-                flex: 0 0 calc(25% - 20px);
-                max-width: calc(25% - 20px);
-            }
-            
-            @media (max-width: 992px) {
-                .product-item {
-                    flex: 0 0 calc(50% - 20px);
-                    max-width: calc(50% - 20px);
-                }
-            }
-            
-            @media (max-width: 576px) {
-                .product-item {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
-            }
+            /* CSS untuk carousel produk otomatis dengan panah */
+#carouselProduk .carousel-inner {
+  padding: 10px 0;
+}
+
+#carouselProduk .product-item {
+  flex: 0 0 45%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+#carouselProduk .product-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  #carouselProduk .product-item {
+    flex: 0 0 90%;
+  }
+    }
         </style>
     </head>
     
@@ -213,97 +216,104 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Daftar Produk Unggulan -->
-                        <div class="row mt-5">
-                            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                                <div class="menu-block-wrap">
-                                    <div class="text-center mb-4 pb-lg-2">
-                                        <em class="text-white">Produk unggulan</em>
-                                        <h4 class="text-white">Tas wanita</h4>
-                                    </div>
+                        <!-- Bagian Produk Kami -->
+<section class="menu-section section-padding" id="section_3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <em class="text-white">Koleksi Terbaik</em>
+        <h2 class="text-white">Produk Kami</h2>
+      </div>
+    </div>
 
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>andin</h6>
-                                        
-                                            <span class="underline"></span>
+    <div id="carouselProduk" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner">
 
-                                            <strong class="ms-auto">Rp 175.000</strong>
-                                        </div>
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <div class="product-item">
+              <div class="team-block-wrap">
+                <div class="team-block-info d-flex flex-column">
+                  <div class="d-flex mt-auto mb-3">
+                    <h4 class="text-white mb-0">TAS WANITA</h4>
+                    <p class="badge ms-4"><em>female</em></p>
+                  </div>
+                  <p class="text-white mb-0">Menunjang penampilan anda sehari-hari.</p>
+                </div>
+                <div class="team-block-image-wrap">
+                  <img src="images/team/portrait-elegant-old-man-wearing-suit.jpg" class="team-block-image img-fluid" alt="">
+                </div>
+              </div>
+            </div>
 
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>gondol</small>
-                                        </div>
-                                    </div>
+            <div class="product-item">
+              <div class="team-block-wrap">
+                <div class="team-block-info d-flex flex-column">
+                  <div class="d-flex mt-auto mb-3">
+                    <h4 class="text-white mb-0">TOTEBAG</h4>
+                    <p class="badge ms-4"><em>Male/Female</em></p>
+                  </div>
+                  <p class="text-white mb-0">Produk terbaik untuk semua kalangan.</p>
+                </div>
+                <div class="team-block-image-wrap">
+                  <img src="images/team/cute-korean-barista-girl-pouring-coffee-prepare-filter-batch-brew-pour-working-cafe.jpg" class="team-block-image img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                                    <div class="menu-block my-4">
-                                        <div class="d-flex">
-                                            <h6>
-                                                tas karung
-                                            </h6>
-                                        
-                                            <span class="underline"></span>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <div class="product-item">
+              <div class="team-block-wrap">
+                <div class="team-block-info d-flex flex-column">
+                  <div class="d-flex mt-auto mb-3">
+                    <h4 class="text-white mb-0">DOMPET WANITA</h4>
+                    <p class="badge ms-4"><em>female</em></p>
+                  </div>
+                  <p class="text-white mb-0">Mempermudah anda dalam urusan kantong.</p>
+                </div>
+                <div class="team-block-image-wrap">
+                  <img src="images/team/small-business-owner-drinking-coffee.jpg" class="team-block-image img-fluid" alt="">
+                </div>
+              </div>
+            </div>
 
-                                            <strong class="text-white ms-auto"><del>Rp 231.000</del></strong>
+            <div class="product-item">
+              <div class="team-block-wrap">
+                <div class="team-block-info d-flex flex-column">
+                  <div class="d-flex mt-auto mb-3">
+                    <h4 class="text-white mb-0">TAS CUSTOM</h4>
+                    <p class="badge ms-4"><em>All</em></p>
+                  </div>
+                  <p class="text-white mb-0">Produk sesuai kriteria anda.</p>
+                </div>
+                <div class="team-block-image-wrap">
+                  <img src="images/team/smiley-business-woman-working-cashier.jpg" class="team-block-image img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                                            <strong class="ms-2">Rp 168.000</strong>
-                                        </div>
+      </div>
 
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>tas rorombehe </small>
-                                        </div>
-                                    </div>
+      <!-- Tombol Panah -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduk" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Sebelumnya</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProduk" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Selanjutnya</span>
+      </button>
 
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>tas cangcut
-                                                <span class="badge ms-3">Rekomendasi</span>
-                                            </h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">Rp 210.000</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>tas cangcut</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block my-4">
-                                        <div class="d-flex">
-                                            <h6>tas celana</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">Rp 175.000</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Kopi segar dan susu kukus</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Kue Pisang</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">Rp 252.000</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Susu Kaya dan Busa</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    </div>
+  </div>
                 </section>
-
 
                 <!-- Bagian Tentang Kami (dipindahkan ke bawah produk) -->
                 <section class="about-section section-padding" id="section_2">
