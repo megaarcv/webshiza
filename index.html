@@ -25,41 +25,44 @@
         <link href="css/tooplate-barista.css" rel="stylesheet">
         
         <style>
-/* ==== PRODUK SLIDER HORIZONTAL RESPONSIF ==== */
+/* --- Hero Section fix --- */
+.hero-section {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* --- Produk section tampil full satu baris horizontal --- */
 .produk-section {
-  background-color: #3a1c00;
-  padding: 50px 0;
+  background: #3a1c00;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .produk-scroll {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  overflow-y: hidden;
   scroll-behavior: smooth;
   padding: 20px;
   scroll-snap-type: x mandatory;
 }
 
 .produk-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.produk-scroll::-webkit-scrollbar-thumb {
-  background: #ff7b00;
-  border-radius: 10px;
+  display: none; /* sembunyikan scrollbar */
 }
 
 .produk-item {
   flex: 0 0 270px;
   background: linear-gradient(to bottom, #4a1c00, #d37a00);
+  border-radius: 16px;
   color: white;
-  border-radius: 18px;
-  padding: 20px;
   text-align: left;
+  padding: 15px;
   scroll-snap-align: start;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .produk-item:hover {
@@ -68,7 +71,7 @@
 
 .produk-item img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 10px;
     }
             </style>
