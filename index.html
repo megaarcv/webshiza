@@ -25,48 +25,41 @@
         <link href="css/tooplate-barista.css" rel="stylesheet">
         
         <style>
-            /* CSS untuk carousel produk otomatis dengan panah */
-            #carouselProduk .carousel-inner {
-              padding: 10px 0;
-            }
+/* Carousel produk - tampil 1 baris penuh di semua device */
+#carouselProduk .carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
 
-            #carouselProduk .product-item {
-              flex: 0 0 45%;
-              background-color: rgba(255, 255, 255, 0.05);
-              border-radius: 15px;
-              overflow: hidden;
-              transition: transform 0.3s ease;
-              max-width: 600px; /* Batasi lebar maksimum */
-            }
+#carouselProduk .carousel-item {
+  flex: 0 0 100%;
+}
 
-            #carouselProduk .product-item:hover {
-              transform: scale(1.05);
-            }
+#carouselProduk .product-item {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
 
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-              background-color: rgba(255, 255, 255, 0.7);
-              border-radius: 50%;
-              padding: 15px;
-            }
+/* Tombol panah */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 15px;
+}
 
-            /* Penyesuaian untuk tampilan mobile */
-            @media (max-width: 768px) {
-              #carouselProduk .product-item {
-                flex: 0 0 90%;
-                max-width: 300px;
-              }
-              
-              #carouselProduk .d-flex.justify-content-center {
-                flex-direction: column;
-                align-items: center;
-              }
-              
-              #carouselProduk .d-flex.justify-content-center .product-item {
-                margin-bottom: 20px;
-              }
-            }
-        </style>
+/* Hover efek */
+#carouselProduk .product-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+            </style>
     </head>
     
     <body>
