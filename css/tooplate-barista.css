@@ -542,30 +542,12 @@ strong {
   position: absolute;
   top: 55%;
   left: 50%;
-  transform: translate(-55%, -50%);
-  width: 200px;
-  height: 200px;
+  transform: translate(-55%, -50%) rotate(45deg);
+  width: 250px;
+  height: 350px;
   pointer-events: none;
-  
-  /* Membuat bentuk oktagram (bintang 8 sudut) */
-  background: 
-    linear-gradient(135deg, rgba(0,0,0,0.65) 40%, transparent 41%),
-    linear-gradient(-135deg, rgba(0,0,0,0.65) 40%, transparent 41%),
-    linear-gradient(45deg, rgba(0,0,0,0.65) 40%, transparent 41%),
-    linear-gradient(-45deg, rgba(0,0,0,0.65) 40%, transparent 41%);
-  clip-path: polygon(
-    50% 0%, 
-    61% 35%, 
-    98% 35%, 
-    68% 57%, 
-    79% 91%, 
-    50% 70%, 
-    21% 91%, 
-    32% 57%, 
-    2% 35%, 
-    39% 35%
-  );
 }
+
 @media screen and (min-width: 991px) {
   .hero-section {
     height: 100vh;
@@ -1215,6 +1197,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
