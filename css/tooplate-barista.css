@@ -33,7 +33,7 @@ https://www.tooplate.com/view/2137-barista-cafe
   --btn-font-size:                16px;
   --form-btn-font-size:           18px;
   --menu-font-size:               16px;
-
+⁹
   --border-radius-large:          100px;
   --border-radius-medium:         20px;
   --border-radius-small:          10px;
@@ -542,7 +542,7 @@ strong {
   position: absolute;
   top: 55%;
   left: 50%;
-  transform: translate(-55%, -50%) rotate(45deg);
+  transform: translate(-55%, -50%); /*rotate(45deg)*/
   width: 250px;
   height: 350px;
   pointer-events: none;
@@ -1255,6 +1255,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
