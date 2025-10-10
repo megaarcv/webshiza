@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Shiza Collections - Tempat terbaik untuk tas dan produk fashion">
+        <meta name="author" content="">
+
+        <title>Shiza Collections - Tas Fashion Berkualitas</title>
+
+        <!-- CSS FILES -->                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+            
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/vegas.min.css" rel="stylesheet">
+        <link href="css/tooplate-barista.css" rel="stylesheet">
+        
+        <style>
+            /* STYLING UNTUK PRODUK - 3 ITEM MENYAMPING */
+            .products-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: nowrap;
+                padding: 20px 0;
+            }
+
+            .product-item {
+                flex: 0 0 300px;
+                background: linear-gradient(to bottom, #3a1c00, #c17000);
+                color: white;
+                padding: 25px;
+                border-radius: 20px;
+                text-align: left;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                transition: transform 0.3s;
+                text-decoration: none;
+                display: block;
+            }
+
+            .product-item:hover {
+                transform: scale(1.05);
+                text-decoration: none;
+            }
+
+            /* Pastikan carousel item aktif */
+            .carousel-item.active .products-container {
+                display: flex !important;
+            }
+
+            /* Responsive design */
+            @media (max-width: 992px) {
+                .products-container {
+                    gap: 15px;
+                }
+                
+                .product-item {
+                    flex: 0 0 280px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .products-container {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                
+                .product-item {
+                    flex: 0 0 45%;
+                    margin-bottom: 15px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .product-item {
+                    flex: 0 0 100%;
+                    max-width: 300px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <main>
+            <nav class="navbar navbar-expand-lg">                
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="images/coffee-beans.png" class="navbar-brand-image img-fluid" alt="Shiza Collections">
+                        Shiza collections
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">Beranda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_3">Produk kami</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">Tentang</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_4">Ulasan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_5">Kontak</a>
+                            </li>
+                        </ul>
+
+                        <div class="ms-lg-3">
+                            <a class="btn custom-btn custom-border-btn" href="reservation.html">
+                                Reservasi
+                                <i class="bi-arrow-up-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12 mx-auto">
+                            <em class="small-text">Selamat datang</em>
+                            <h1>Shiza collections</h1>
+                            <p class="text-white mb-4 pb-lg-2">
+                                produk <em>favorit</em> Anda dalam kehidupan sehari-hari.
+                            </p>
+                            <a class="btn custom-btn custom-border-btn smoothscroll me-3" href="#section_3">
+                                Lihat Produk
+                            </a>
+                            <a class="btn custom-btn smoothscroll me-2 mb-2" href="#section_2">
+                                <strong>Tentang Kami</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slides"></div>
+            </section>
+
+            <!-- BAGIAN PRODUK KAMI - 3 ITEM MENYAMPING -->
+            <section class="menu-section section-padding" id="section_3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mb-5">
+                            <em class="text-white">Koleksi Terbaik</em>
+                            <h2 class="text-white">Produk Kami</h2>
+                        </div>
+                    </div>
+
+                    <div id="carouselProduk" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                        <div class="carousel-inner">
+                            
+                            <!-- SLIDE 1 - 3 PRODUK MENYAMPING -->
+                            <div class="carousel-item active">
+                                <div class="products-container">
+                                    <!-- Produk 1 -->
+                                    <a href="produk.html" class="product-item">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-image-wrap">
+                                                <img src="images/products/tas-wanita.jpg" class="team-block-image img-fluid" alt="Tas Wanita">
+                                            </div>
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">TAS WANITA</h4>
+                                                    <p class="badge ms-4"><em>female</em></p>
+                                                </div>
+                                                <p class="text-white mb-0">Menunjang penampilan anda sehari-hari.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Produk 2 -->
+                                    <a href="produk.html" class="product-item">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-image-wrap">
+                                                <img src="images/products/totebag.jpg" class="team-block-image img-fluid" alt="Totebag">
+                                            </div>
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">TOTEBAG</h4>
+                                                    <p class="badge ms-4"><em>Male/Female</em></p>
+                                                </div>
+                                                <p class="text-white mb-0">Produk terbaik untuk semua kalangan.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Produk 3 -->
+                                    <a href="produk.html" class="product-item">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-image-wrap">
+                                                <img src="images/products/dompet-wanita.jpg" class="team-block-image img-fluid" alt="Dompet Wanita">
+                                            </div>
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">DOMPET WANITA</h4>
+                                                    <p class="badge ms-4"><em>female</em></p>
+                                                </div>
+                                                <p class="text-white mb-0">Mempermudah anda dalam urusan kantong.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 2 - 3 PRODUK MENYAMPING -->
+                            <div class="carousel-item">
+                                <div class="products-container">
+                                    <!-- Produk 4 -->
+                                    <a href="produk.html" class="product-item">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-image-wrap">
+                                                <img src="images/products/tas-custom.jpg" class="team-block-image img-fluid" alt="Tas Custom">
+                                            </div>
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">TAS CUSTOM</h4>
+                                                    <p class="badge ms-4"><em>All</em></p>
+                                                </div>
+                                                <p class="text-white mb-0">Produk sesuai kriteria anda.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Produk 5 -->
+                                    <a href="produk.html" class="product-item">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-image-wrap">
+                                                <img src="images/products/tas-pria.jpg" class="team-block-image img-fluid" alt="Tas Pria">
+                                            </div>
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">TAS PRIA</h4>
+                                                    <p class="badge ms-4"><em>Male</em></p>
+                                                </div>
+                                                <p class="text-white mb-0">Tas elegan untuk aktivitas pria.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Produk 6 -->
+                                    <a href="produk.html" class="product-item">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-image-wrap">
+                                                <img src="images/products/backpack.jpg" class="team-block-image img-fluid" alt="Backpack">
+                                            </div>
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">BACKPACK</h4>
+                                                    <p class="badge ms-4"><em>Unisex</em></p>
+                                                </div>
+                                                <p class="text-white mb-0">Nyaman untuk aktivitas sehari-hari.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- TOMBOL PANAH CAROUSEL -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduk" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Sebelumnya</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProduk" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Selanjutnya</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+<!-- Bagian Tentang Kami -->
+<section class="about-section section-padding" id="section_2">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 col-12">
+                <div class="ratio ratio-1x1">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="videos/pexels-mike-jones-9046237.mp4" type="video/mp4">
+
+                        Browser Anda tidak mendukung tag video.
+                    </video>
+
+                    <div class="about-video-info d-flex flex-column">
+                        <h4 class="mt-auto">Kami Berdiri Sejak 2007.</h4>
+
+                        <h4>Produk terbaik di kelasnya.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
+                <em class="text-white">ShizaCollections.com</em>
+
+                <h2 class="text-white mb-3">Shiza gallery</h2>
+
+                <p class="text-white">Produk kami telah menjadi unggulan selama yang bisa diingat siapa pun, dan telah menjadi yang terbaik dikelasnya</p>
+
+                <a href="#section_3" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Cek produk unggulan</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer Baru (Mirip Eiger Style) -->
+<footer class="footer-dark">
+  <div class="container">
+
+    <!-- Bagian Promo dan Layanan -->
+    <div class="row promo-section text-white mb-5">
+      <div class="col-md-4 col-12 promo-box">
+        <i class="bi-lightning-charge-fill me-3"></i>
+        <div>
+          <strong>Flash Sale setiap hari</strong>
+          <p>Dapatkan diskon menarik setiap hari</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12 promo-box">
+        <i class="bi-truck me-3"></i>
+        <div>
+          <strong>Extra Voucher & Gratis Ongkir</strong>
+          <p>Syarat dan ketentuan berlaku</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12 promo-box">
+        <i class="bi-headset me-3"></i>
+        <div>
+          <strong>Customer Service 24 Jam</strong>
+          <p>Kami siap menjawab keluhan anda 24/7</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garis pemisah -->
+    <div class="divider"></div>
+
+    <!-- Bagian Email Subscribe -->
+    <div class="row subscribe-section text-white text-center mt-4">
+      <p class="mb-2">Dapatkan promo terbaru dan info lainnya hanya dengan mendaftarkan emailmu!</p>
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <form class="subscribe-form d-flex">
+          <input type="email" class="form-control" placeholder="Masukkan email anda">
+          <button type="submit" class="btn btn-warning ms-2">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="divider mt-5"></div>
+
+    <!-- Info Utama Footer -->
+    <div class="row footer-links text-white mt-5">
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Bantuan</h5>
+        <ul>
+          <li><a href="#">Pengiriman</a></li>
+          <li><a href="#">Pembayaran</a></li>
+          <li><a href="#">Penukaran & Pengembalian</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Tentang Kami</h5>
+        <ul>
+          <li><a href="#section_2">Profil</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Lokasi Toko</a></li>
+          <li><a href="#">Sponsorship</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Pengguna</h5>
+        <ul>
+          <li><a href="#">Lacak Pesanan</a></li>
+          <li><a href="#">Membership</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Hubungi Kami</h5>
+        <p><i class="bi-telephone me-2"></i> <a href="tel:+6287728850054">+62 877-2885-0054</a></p>
+        <p><i class="bi-envelope me-2"></i> <a href="mailto:hello@shiza.co">hello@shiza.co</a></p>
+        <p>Setiap Hari: 08.00 - 22.00</p>
+        <div class="social-icons mt-3">
+          <a href="#"><i class="bi-instagram"></i></a>
+          <a href="#"><i class="bi-tiktok"></i></a>
+          <a href="#"><i class="bi-facebook"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-5 text-secondary">
+      <p>Hak Cipta © 2024 Shiza Collections</p>
+    </div>
+
+  </div>
+</footer>
+        </main>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/vegas.min.js"></script>
+        <script src="js/custom.js"></script>            
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Pastikan carousel bekerja dengan baik
+            document.addEventListener('DOMContentLoaded', function() {
+                var myCarousel = document.getElementById('carouselProduk');
+                var carousel = new bootstrap.Carousel(myCarousel, {
+                    interval: 4000,
+                    wrap: true
+                });
+            });
+        </script>
+    </body>
+</html>
