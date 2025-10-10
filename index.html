@@ -23,17 +23,25 @@
             .products-container {
                 display: flex;
                 justify-content: center;
-                gap: 20px;
+                gap: 15px;
                 flex-wrap: nowrap;
                 padding: 20px 0;
+                overflow-x: auto; /* Untuk scroll horizontal di mobile */
+                scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
+                -ms-overflow-style: none; /* Sembunyikan scrollbar IE */
+            }
+
+            .products-container::-webkit-scrollbar {
+                display: none; /* Sembunyikan scrollbar Chrome/Safari */
             }
 
             .product-item {
-                flex: 0 0 300px;
+                flex: 0 0 280px; /* Lebar tetap */
+                min-width: 280px; /* Minimum width */
                 background: linear-gradient(to bottom, #3a1c00, #c17000);
                 color: white;
-                padding: 25px;
-                border-radius: 20px;
+                padding: 20px;
+                border-radius: 15px;
                 text-align: left;
                 box-shadow: 0 4px 10px rgba(0,0,0,0.3);
                 transition: transform 0.3s;
@@ -51,34 +59,77 @@
                 display: flex !important;
             }
 
-            /* Responsive design */
+            /* RESPONSIVE DESIGN - TETAP MENYAMPING DI SEMUA UKURAN */
+            @media (max-width: 1200px) {
+                .product-item {
+                    flex: 0 0 250px;
+                    min-width: 250px;
+                    padding: 18px;
+                }
+            }
+
             @media (max-width: 992px) {
-                .products-container {
-                    gap: 15px;
+                .product-item {
+                    flex: 0 0 230px;
+                    min-width: 230px;
+                    padding: 15px;
                 }
                 
-                .product-item {
-                    flex: 0 0 280px;
+                .products-container {
+                    gap: 12px;
                 }
             }
 
             @media (max-width: 768px) {
-                .products-container {
-                    flex-wrap: wrap;
-                    justify-content: center;
+                .product-item {
+                    flex: 0 0 200px;
+                    min-width: 200px;
+                    padding: 12px;
                 }
                 
-                .product-item {
-                    flex: 0 0 45%;
-                    margin-bottom: 15px;
+                .products-container {
+                    gap: 10px;
+                    justify-content: flex-start; /* Rata kiri untuk scroll horizontal */
+                    padding-left: 15px;
+                    padding-right: 15px;
                 }
             }
 
             @media (max-width: 576px) {
                 .product-item {
-                    flex: 0 0 100%;
-                    max-width: 300px;
+                    flex: 0 0 180px;
+                    min-width: 180px;
+                    padding: 10px;
                 }
+                
+                .team-block-image {
+                    max-height: 120px;
+                    object-fit: cover;
+                }
+                
+                .team-block-info h4 {
+                    font-size: 0.9rem;
+                }
+                
+                .team-block-info p {
+                    font-size: 0.8rem;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .product-item {
+                    flex: 0 0 160px;
+                    min-width: 160px;
+                    padding: 8px;
+                }
+            }
+
+            /* Style untuk badge */
+            .badge {
+                background: rgba(255,255,255,0.2);
+                padding: 2px 8px;
+                border-radius: 10px;
+                font-size: 0.7rem;
             }
         </style>
     </head>
@@ -146,11 +197,11 @@
                 <div class="hero-slides"></div>
             </section>
 
-            <!-- BAGIAN PRODUK KAMI - 3 ITEM MENYAMPING -->
+            <!-- BAGIAN PRODUK KAMI - TETAP MENYAMPING DI MOBILE -->
             <section class="menu-section section-padding" id="section_3">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 text-center mb-5">
+                        <div class="col-12 text-center mb-4">
                             <em class="text-white">Koleksi Terbaik</em>
                             <h2 class="text-white">Produk Kami</h2>
                         </div>
@@ -169,11 +220,11 @@
                                                 <img src="images/products/tas-wanita.jpg" class="team-block-image img-fluid" alt="Tas Wanita">
                                             </div>
                                             <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
+                                                <div class="d-flex mt-auto mb-2">
                                                     <h4 class="text-white mb-0">TAS WANITA</h4>
-                                                    <p class="badge ms-4"><em>female</em></p>
+                                                    <p class="badge ms-2"><em>female</em></p>
                                                 </div>
-                                                <p class="text-white mb-0">Menunjang penampilan anda sehari-hari.</p>
+                                                <p class="text-white mb-0 small">Menunjang penampilan anda sehari-hari.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -185,11 +236,11 @@
                                                 <img src="images/products/totebag.jpg" class="team-block-image img-fluid" alt="Totebag">
                                             </div>
                                             <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
+                                                <div class="d-flex mt-auto mb-2">
                                                     <h4 class="text-white mb-0">TOTEBAG</h4>
-                                                    <p class="badge ms-4"><em>Male/Female</em></p>
+                                                    <p class="badge ms-2"><em>Male/Female</em></p>
                                                 </div>
-                                                <p class="text-white mb-0">Produk terbaik untuk semua kalangan.</p>
+                                                <p class="text-white mb-0 small">Produk terbaik untuk semua kalangan.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -201,11 +252,11 @@
                                                 <img src="images/products/dompet-wanita.jpg" class="team-block-image img-fluid" alt="Dompet Wanita">
                                             </div>
                                             <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
+                                                <div class="d-flex mt-auto mb-2">
                                                     <h4 class="text-white mb-0">DOMPET WANITA</h4>
-                                                    <p class="badge ms-4"><em>female</em></p>
+                                                    <p class="badge ms-2"><em>female</em></p>
                                                 </div>
-                                                <p class="text-white mb-0">Mempermudah anda dalam urusan kantong.</p>
+                                                <p class="text-white mb-0 small">Mempermudah anda dalam urusan kantong.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -222,11 +273,11 @@
                                                 <img src="images/products/tas-custom.jpg" class="team-block-image img-fluid" alt="Tas Custom">
                                             </div>
                                             <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
+                                                <div class="d-flex mt-auto mb-2">
                                                     <h4 class="text-white mb-0">TAS CUSTOM</h4>
-                                                    <p class="badge ms-4"><em>All</em></p>
+                                                    <p class="badge ms-2"><em>All</em></p>
                                                 </div>
-                                                <p class="text-white mb-0">Produk sesuai kriteria anda.</p>
+                                                <p class="text-white mb-0 small">Produk sesuai kriteria anda.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -238,11 +289,11 @@
                                                 <img src="images/products/tas-pria.jpg" class="team-block-image img-fluid" alt="Tas Pria">
                                             </div>
                                             <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
+                                                <div class="d-flex mt-auto mb-2">
                                                     <h4 class="text-white mb-0">TAS PRIA</h4>
-                                                    <p class="badge ms-4"><em>Male</em></p>
+                                                    <p class="badge ms-2"><em>Male</em></p>
                                                 </div>
-                                                <p class="text-white mb-0">Tas elegan untuk aktivitas pria.</p>
+                                                <p class="text-white mb-0 small">Tas elegan untuk aktivitas pria.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -254,11 +305,11 @@
                                                 <img src="images/products/backpack.jpg" class="team-block-image img-fluid" alt="Backpack">
                                             </div>
                                             <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
+                                                <div class="d-flex mt-auto mb-2">
                                                     <h4 class="text-white mb-0">BACKPACK</h4>
-                                                    <p class="badge ms-4"><em>Unisex</em></p>
+                                                    <p class="badge ms-2"><em>Unisex</em></p>
                                                 </div>
-                                                <p class="text-white mb-0">Nyaman untuk aktivitas sehari-hari.</p>
+                                                <p class="text-white mb-0 small">Nyaman untuk aktivitas sehari-hari.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -279,7 +330,7 @@
                     </div>
                 </div>
             </section>
-
+            
 <!-- Bagian Tentang Kami -->
 <section class="about-section section-padding" id="section_2">
     <div class="section-overlay"></div>
