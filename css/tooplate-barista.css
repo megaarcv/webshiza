@@ -527,26 +527,29 @@ strong {
 /*---------------------------------------
   HERO        
 -----------------------------------------*/
+.hero-section {
+  background-color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  text-align: center;
+}
+
 .hero-section::after {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: var(--border-radius-medium);
   content: "";
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.1);
-  width: 130px;
-  height: 90px;
-  
-  /* bentuk siluet bayangan tas manual */
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.7) 40%,
-    rgba(0, 0, 0, 0) 70%
-  );
-
-  border-radius: 40% 40% 10% 10% / 50% 50% 20% 20%;
-  opacity: 0.85;
+  transform: translate(-55%, -50%) rotate(45deg);
+  width: 250px;
+  height: 350px;
   pointer-events: none;
-  z-index: 2;
+  
+  /* Mengubah bentuk menjadi polygon */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0; /* Menghapus border-radius karena sudah menggunakan clip-path */
 }
 @media screen and (min-width: 991px) {
 
@@ -1252,6 +1255,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
