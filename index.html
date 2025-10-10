@@ -20,117 +20,153 @@
         
         <style>
             /* STYLING UNTUK PRODUK - 3 ITEM MENYAMPING */
-            .products-container {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                flex-wrap: nowrap;
-                padding: 20px 0;
-                overflow-x: auto; /* Untuk scroll horizontal di mobile */
-                scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
-                -ms-overflow-style: none; /* Sembunyikan scrollbar IE */
-            }
+.products-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    padding: 20px 0;
+    overflow-x: auto; /* Untuk scroll horizontal di mobile */
+    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
+    -ms-overflow-style: none; /* Sembunyikan scrollbar IE */
+}
 
-            .products-container::-webkit-scrollbar {
-                display: none; /* Sembunyikan scrollbar Chrome/Safari */
-            }
+.products-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar Chrome/Safari */
+}
 
-            .product-item {
-                flex: 0 0 280px; /* Lebar tetap */
-                min-width: 280px; /* Minimum width */
-                background: linear-gradient(to bottom, #3a1c00, #c17000);
-                color: white;
-                padding: 20px;
-                border-radius: 8px;
-                text-align: left;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-                transition: transform 0.3s;
-                text-decoration: none;
-                display: block;
-            }
+.product-item {
+    flex: 0 0 280px; /* Lebar tetap */
+    min-width: 280px; /* Minimum width */
+    background: linear-gradient(to bottom, #3a1c00, #c17000);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+    text-decoration: none;
+    display: block;
+}
 
-            .product-item:hover {
-                transform: scale(1.05);
-                text-decoration: none;
-            }
+.product-item:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+}
 
-            /* Pastikan carousel item aktif */
-            .carousel-item.active .products-container {
-                display: flex !important;
-            }
+/* TINGGIKAN FOTO PRODUK - TANPA MENGUBAH LAYOUT 3 BARIS */
+.team-block-image {
+    height: 180px;
+    max-height: 180px;
+    min-height: 180px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    border-radius: 4px;
+}
 
-            /* RESPONSIVE DESIGN - TETAP MENYAMPING DI SEMUA UKURAN */
-            @media (max-width: 1200px) {
-                .product-item {
-                    flex: 0 0 250px;
-                    min-width: 250px;
-                    padding: 18px;
-                }
-            }
+/* Pastikan carousel item aktif */
+.carousel-item.active .products-container {
+    display: flex !important;
+}
 
-            @media (max-width: 992px) {
-                .product-item {
-                    flex: 0 0 230px;
-                    min-width: 230px;
-                    padding: 15px;
-                }
-                
-                .products-container {
-                    gap: 12px;
-                }
-            }
+/* RESPONSIVE DESIGN - TETAP MENYAMPING DI SEMUA UKURAN */
+@media (max-width: 1200px) {
+    .product-item {
+        flex: 0 0 250px;
+        min-width: 250px;
+        padding: 18px;
+    }
+    .team-block-image {
+        height: 170px;
+        max-height: 170px;
+        min-height: 170px;
+    }
+}
 
-            @media (max-width: 768px) {
-                .product-item {
-                    flex: 0 0 200px;
-                    min-width: 200px;
-                    padding: 12px;
-                }
-                
-                .products-container {
-                    gap: 10px;
-                    justify-content: flex-start; /* Rata kiri untuk scroll horizontal */
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-            }
+@media (max-width: 992px) {
+    .product-item {
+        flex: 0 0 230px;
+        min-width: 230px;
+        padding: 15px;
+    }
+    
+    .products-container {
+        gap: 12px;
+    }
+    
+    .team-block-image {
+        height: 160px;
+        max-height: 160px;
+        min-height: 160px;
+    }
+}
 
-            @media (max-width: 576px) {
-                .product-item {
-                    flex: 0 0 180px;
-                    min-width: 180px;
-                    padding: 10px;
-                }
-                
-                .team-block-image {
-                    max-height: 200px;
-                    object-fit: cover;
-                }
-                
-                .team-block-info h4 {
-                    font-size: 0.9rem;
-                }
-                
-                .team-block-info p {
-                    font-size: 0.8rem;
-                }
-            }
+@media (max-width: 768px) {
+    .product-item {
+        flex: 0 0 200px;
+        min-width: 200px;
+        padding: 12px;
+    }
+    
+    .products-container {
+        gap: 10px;
+        justify-content: flex-start; /* Rata kiri untuk scroll horizontal */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .team-block-image {
+        height: 150px;
+        max-height: 150px;
+        min-height: 150px;
+    }
+}
 
-            @media (max-width: 400px) {
-                .product-item {
-                    flex: 0 0 160px;
-                    min-width: 160px;
-                    padding: 8px;
-                }
-            }
+@media (max-width: 576px) {
+    .product-item {
+        flex: 0 0 180px;
+        min-width: 180px;
+        padding: 10px;
+    }
+    
+    .team-block-image {
+        height: 140px;
+        max-height: 140px;
+        min-height: 140px;
+        object-fit: cover;
+    }
+    
+    .team-block-info h4 {
+        font-size: 0.9rem;
+    }
+    
+    .team-block-info p {
+        font-size: 0.8rem;
+    }
+}
 
-            /* Style untuk badge */
-            .badge {
-                background: rgba(255,255,255,0.2);
-                padding: 2px 8px;
-                border-radius: 10px;
-                font-size: 0.7rem;
-            }
+@media (max-width: 400px) {
+    .product-item {
+        flex: 0 0 160px;
+        min-width: 160px;
+        padding: 8px;
+    }
+    
+    .team-block-image {
+        height: 130px;
+        max-height: 130px;
+        min-height: 130px;
+    }
+}
+
+/* Style untuk badge */
+.badge {
+    background: rgba(255,255,255,0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    }
         </style>
     </head>
     
