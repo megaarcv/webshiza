@@ -730,9 +730,9 @@ strong {
 }
 
 .menu-block-image {
-  border-radius: 100%;
+  border-radius: 200%;
   width: 350px;
-  height: 500px;
+  height: 600px;
   object-fit: cover;
   display: block;
   margin: auto;
@@ -1255,6 +1255,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
