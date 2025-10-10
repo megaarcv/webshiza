@@ -530,22 +530,24 @@ strong {
 .hero-section::after {
   content: "";
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.2);
-  width: 110px;
-  height: 110px;
+  transform: translate(-50%, -50%) scale(1.1);
+  width: 130px;
+  height: 90px;
+  
+  /* bentuk siluet bayangan tas manual */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
 
-  /* Bentuk siluet tas pakai SVG langsung */
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="white" d="M32 8c-4.4 0-8 3.6-8 8v4H16c-1.1 0-2 .9-2 2v24c0 2.2 1.8 4 4 4h28c2.2 0 4-1.8 4-4V22c0-1.1-.9-2-2-2h-8v-4c0-4.4-3.6-8-8-8zM28 20v-4c0-2.2 1.8-4 4-4s4 1.8 4 4v4H28z"/></svg>') center/contain no-repeat;
-
-  background-color: rgba(0, 0, 0, 0.7); /* warna siluet hitam transparan */
-  opacity: 0.8;
+  border-radius: 40% 40% 10% 10% / 50% 50% 20% 20%;
+  opacity: 0.85;
   pointer-events: none;
   z-index: 2;
-  border-radius: 0;
-  clip-path: none; /* hapus segitiga */
-  }
+}
 @media screen and (min-width: 991px) {
 
   .hero-section {
@@ -1250,6 +1252,7 @@ strong {
     top: 13px;
   }
 }
+
 
 
 
